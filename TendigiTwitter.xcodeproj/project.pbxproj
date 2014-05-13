@@ -1,482 +1,1115 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		0FF1AB51192291D30012D03D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF1AB50192291D30012D03D /* Foundation.framework */; };
-		0FF1AB53192291D30012D03D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF1AB52192291D30012D03D /* CoreGraphics.framework */; };
-		0FF1AB55192291D30012D03D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF1AB54192291D30012D03D /* UIKit.framework */; };
-		0FF1AB57192291D30012D03D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF1AB56192291D30012D03D /* CoreData.framework */; };
-		0FF1AB5D192291D30012D03D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0FF1AB5B192291D30012D03D /* InfoPlist.strings */; };
-		0FF1AB5F192291D30012D03D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF1AB5E192291D30012D03D /* main.m */; };
-		0FF1AB63192291D30012D03D /* ZAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF1AB62192291D30012D03D /* ZAAppDelegate.m */; };
-		0FF1AB66192291D30012D03D /* TendigiTwitter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0FF1AB64192291D30012D03D /* TendigiTwitter.xcdatamodeld */; };
-		0FF1AB68192291D30012D03D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FF1AB67192291D30012D03D /* Images.xcassets */; };
-		0FF1AB6F192291D30012D03D /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF1AB6E192291D30012D03D /* XCTest.framework */; };
-		0FF1AB70192291D30012D03D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF1AB50192291D30012D03D /* Foundation.framework */; };
-		0FF1AB71192291D30012D03D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF1AB54192291D30012D03D /* UIKit.framework */; };
-		0FF1AB72192291D30012D03D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF1AB56192291D30012D03D /* CoreData.framework */; };
-		0FF1AB7A192291D30012D03D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0FF1AB78192291D30012D03D /* InfoPlist.strings */; };
-		0FF1AB7C192291D30012D03D /* TendigiTwitterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF1AB7B192291D30012D03D /* TendigiTwitterTests.m */; };
-		0FF1AB87192293560012D03D /* ZAPrivateConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF1AB86192293560012D03D /* ZAPrivateConstants.m */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		0FF1AB73192291D30012D03D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0FF1AB45192291D30012D03D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0FF1AB4C192291D30012D03D;
-			remoteInfo = TendigiTwitter;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		0FF1AB4D192291D30012D03D /* TendigiTwitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TendigiTwitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0FF1AB50192291D30012D03D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		0FF1AB52192291D30012D03D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		0FF1AB54192291D30012D03D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		0FF1AB56192291D30012D03D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		0FF1AB5A192291D30012D03D /* TendigiTwitter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TendigiTwitter-Info.plist"; sourceTree = "<group>"; };
-		0FF1AB5C192291D30012D03D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0FF1AB5E192291D30012D03D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0FF1AB60192291D30012D03D /* TendigiTwitter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TendigiTwitter-Prefix.pch"; sourceTree = "<group>"; };
-		0FF1AB61192291D30012D03D /* ZAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZAAppDelegate.h; sourceTree = "<group>"; };
-		0FF1AB62192291D30012D03D /* ZAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZAAppDelegate.m; sourceTree = "<group>"; };
-		0FF1AB65192291D30012D03D /* TendigiTwitter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TendigiTwitter.xcdatamodel; sourceTree = "<group>"; };
-		0FF1AB67192291D30012D03D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		0FF1AB6D192291D30012D03D /* TendigiTwitterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TendigiTwitterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0FF1AB6E192291D30012D03D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		0FF1AB77192291D30012D03D /* TendigiTwitterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TendigiTwitterTests-Info.plist"; sourceTree = "<group>"; };
-		0FF1AB79192291D30012D03D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0FF1AB7B192291D30012D03D /* TendigiTwitterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TendigiTwitterTests.m; sourceTree = "<group>"; };
-		0FF1AB85192293560012D03D /* ZAPrivateConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAPrivateConstants.h; sourceTree = "<group>"; };
-		0FF1AB86192293560012D03D /* ZAPrivateConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAPrivateConstants.m; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		0FF1AB4A192291D30012D03D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0FF1AB53192291D30012D03D /* CoreGraphics.framework in Frameworks */,
-				0FF1AB57192291D30012D03D /* CoreData.framework in Frameworks */,
-				0FF1AB55192291D30012D03D /* UIKit.framework in Frameworks */,
-				0FF1AB51192291D30012D03D /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0FF1AB6A192291D30012D03D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0FF1AB6F192291D30012D03D /* XCTest.framework in Frameworks */,
-				0FF1AB72192291D30012D03D /* CoreData.framework in Frameworks */,
-				0FF1AB71192291D30012D03D /* UIKit.framework in Frameworks */,
-				0FF1AB70192291D30012D03D /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		0FF1AB44192291D30012D03D = {
-			isa = PBXGroup;
-			children = (
-				0FF1AB58192291D30012D03D /* TendigiTwitter */,
-				0FF1AB75192291D30012D03D /* TendigiTwitterTests */,
-				0FF1AB4F192291D30012D03D /* Frameworks */,
-				0FF1AB4E192291D30012D03D /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		0FF1AB4E192291D30012D03D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0FF1AB4D192291D30012D03D /* TendigiTwitter.app */,
-				0FF1AB6D192291D30012D03D /* TendigiTwitterTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		0FF1AB4F192291D30012D03D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				0FF1AB50192291D30012D03D /* Foundation.framework */,
-				0FF1AB52192291D30012D03D /* CoreGraphics.framework */,
-				0FF1AB54192291D30012D03D /* UIKit.framework */,
-				0FF1AB56192291D30012D03D /* CoreData.framework */,
-				0FF1AB6E192291D30012D03D /* XCTest.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		0FF1AB58192291D30012D03D /* TendigiTwitter */ = {
-			isa = PBXGroup;
-			children = (
-				0FF1AB85192293560012D03D /* ZAPrivateConstants.h */,
-				0FF1AB86192293560012D03D /* ZAPrivateConstants.m */,
-				0FF1AB61192291D30012D03D /* ZAAppDelegate.h */,
-				0FF1AB62192291D30012D03D /* ZAAppDelegate.m */,
-				0FF1AB67192291D30012D03D /* Images.xcassets */,
-				0FF1AB64192291D30012D03D /* TendigiTwitter.xcdatamodeld */,
-				0FF1AB59192291D30012D03D /* Supporting Files */,
-			);
-			path = TendigiTwitter;
-			sourceTree = "<group>";
-		};
-		0FF1AB59192291D30012D03D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				0FF1AB5A192291D30012D03D /* TendigiTwitter-Info.plist */,
-				0FF1AB5B192291D30012D03D /* InfoPlist.strings */,
-				0FF1AB5E192291D30012D03D /* main.m */,
-				0FF1AB60192291D30012D03D /* TendigiTwitter-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		0FF1AB75192291D30012D03D /* TendigiTwitterTests */ = {
-			isa = PBXGroup;
-			children = (
-				0FF1AB7B192291D30012D03D /* TendigiTwitterTests.m */,
-				0FF1AB76192291D30012D03D /* Supporting Files */,
-			);
-			path = TendigiTwitterTests;
-			sourceTree = "<group>";
-		};
-		0FF1AB76192291D30012D03D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				0FF1AB77192291D30012D03D /* TendigiTwitterTests-Info.plist */,
-				0FF1AB78192291D30012D03D /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		0FF1AB4C192291D30012D03D /* TendigiTwitter */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0FF1AB7F192291D30012D03D /* Build configuration list for PBXNativeTarget "TendigiTwitter" */;
-			buildPhases = (
-				0FF1AB49192291D30012D03D /* Sources */,
-				0FF1AB4A192291D30012D03D /* Frameworks */,
-				0FF1AB4B192291D30012D03D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = TendigiTwitter;
-			productName = TendigiTwitter;
-			productReference = 0FF1AB4D192291D30012D03D /* TendigiTwitter.app */;
-			productType = "com.apple.product-type.application";
-		};
-		0FF1AB6C192291D30012D03D /* TendigiTwitterTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0FF1AB82192291D30012D03D /* Build configuration list for PBXNativeTarget "TendigiTwitterTests" */;
-			buildPhases = (
-				0FF1AB69192291D30012D03D /* Sources */,
-				0FF1AB6A192291D30012D03D /* Frameworks */,
-				0FF1AB6B192291D30012D03D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0FF1AB74192291D30012D03D /* PBXTargetDependency */,
-			);
-			name = TendigiTwitterTests;
-			productName = TendigiTwitterTests;
-			productReference = 0FF1AB6D192291D30012D03D /* TendigiTwitterTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		0FF1AB45192291D30012D03D /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				CLASSPREFIX = ZA;
-				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = "Ezekiel Abuhoff";
-				TargetAttributes = {
-					0FF1AB6C192291D30012D03D = {
-						TestTargetID = 0FF1AB4C192291D30012D03D;
-					};
-				};
-			};
-			buildConfigurationList = 0FF1AB48192291D30012D03D /* Build configuration list for PBXProject "TendigiTwitter" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
-			mainGroup = 0FF1AB44192291D30012D03D;
-			productRefGroup = 0FF1AB4E192291D30012D03D /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				0FF1AB4C192291D30012D03D /* TendigiTwitter */,
-				0FF1AB6C192291D30012D03D /* TendigiTwitterTests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		0FF1AB4B192291D30012D03D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0FF1AB5D192291D30012D03D /* InfoPlist.strings in Resources */,
-				0FF1AB68192291D30012D03D /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0FF1AB6B192291D30012D03D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0FF1AB7A192291D30012D03D /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		0FF1AB49192291D30012D03D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0FF1AB66192291D30012D03D /* TendigiTwitter.xcdatamodeld in Sources */,
-				0FF1AB5F192291D30012D03D /* main.m in Sources */,
-				0FF1AB87192293560012D03D /* ZAPrivateConstants.m in Sources */,
-				0FF1AB63192291D30012D03D /* ZAAppDelegate.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0FF1AB69192291D30012D03D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0FF1AB7C192291D30012D03D /* TendigiTwitterTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0FF1AB74192291D30012D03D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0FF1AB4C192291D30012D03D /* TendigiTwitter */;
-			targetProxy = 0FF1AB73192291D30012D03D /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		0FF1AB5B192291D30012D03D /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0FF1AB5C192291D30012D03D /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		0FF1AB78192291D30012D03D /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0FF1AB79192291D30012D03D /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		0FF1AB7D192291D30012D03D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-			};
-			name = Debug;
-		};
-		0FF1AB7E192291D30012D03D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		0FF1AB80192291D30012D03D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TendigiTwitter/TendigiTwitter-Prefix.pch";
-				INFOPLIST_FILE = "TendigiTwitter/TendigiTwitter-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		0FF1AB81192291D30012D03D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TendigiTwitter/TendigiTwitter-Prefix.pch";
-				INFOPLIST_FILE = "TendigiTwitter/TendigiTwitter-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		0FF1AB83192291D30012D03D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TendigiTwitter.app/TendigiTwitter";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TendigiTwitter/TendigiTwitter-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "TendigiTwitterTests/TendigiTwitterTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		0FF1AB84192291D30012D03D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TendigiTwitter.app/TendigiTwitter";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TendigiTwitter/TendigiTwitter-Prefix.pch";
-				INFOPLIST_FILE = "TendigiTwitterTests/TendigiTwitterTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		0FF1AB48192291D30012D03D /* Build configuration list for PBXProject "TendigiTwitter" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0FF1AB7D192291D30012D03D /* Debug */,
-				0FF1AB7E192291D30012D03D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0FF1AB7F192291D30012D03D /* Build configuration list for PBXNativeTarget "TendigiTwitter" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0FF1AB80192291D30012D03D /* Debug */,
-				0FF1AB81192291D30012D03D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		0FF1AB82192291D30012D03D /* Build configuration list for PBXNativeTarget "TendigiTwitterTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0FF1AB83192291D30012D03D /* Debug */,
-				0FF1AB84192291D30012D03D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-/* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		0FF1AB64192291D30012D03D /* TendigiTwitter.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				0FF1AB65192291D30012D03D /* TendigiTwitter.xcdatamodel */,
-			);
-			currentVersion = 0FF1AB65192291D30012D03D /* TendigiTwitter.xcdatamodel */;
-			path = TendigiTwitter.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
-	};
-	rootObject = 0FF1AB45192291D30012D03D /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>0084A2046EB1412EA3D901FD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Pods.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>02279B26D8A24E06A4B0AB43</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>0FF1AB44192291D30012D03D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>0FF1AB58192291D30012D03D</string>
+				<string>0FF1AB75192291D30012D03D</string>
+				<string>0FF1AB4F192291D30012D03D</string>
+				<string>0FF1AB4E192291D30012D03D</string>
+				<string>0084A2046EB1412EA3D901FD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0FF1AB45192291D30012D03D</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>CLASSPREFIX</key>
+				<string>ZA</string>
+				<key>LastUpgradeCheck</key>
+				<string>0510</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>Ezekiel Abuhoff</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>0FF1AB6C192291D30012D03D</key>
+					<dict>
+						<key>TestTargetID</key>
+						<string>0FF1AB4C192291D30012D03D</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>0FF1AB48192291D30012D03D</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>0FF1AB44192291D30012D03D</string>
+			<key>productRefGroup</key>
+			<string>0FF1AB4E192291D30012D03D</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>0FF1AB4C192291D30012D03D</string>
+				<string>0FF1AB6C192291D30012D03D</string>
+			</array>
+		</dict>
+		<key>0FF1AB48192291D30012D03D</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>0FF1AB7D192291D30012D03D</string>
+				<string>0FF1AB7E192291D30012D03D</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>0FF1AB49192291D30012D03D</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>0FF1AB66192291D30012D03D</string>
+				<string>0FF1AB5F192291D30012D03D</string>
+				<string>0FF1AB87192293560012D03D</string>
+				<string>0FF1AB63192291D30012D03D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>0FF1AB4A192291D30012D03D</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>0FF1AB53192291D30012D03D</string>
+				<string>0FF1AB57192291D30012D03D</string>
+				<string>0FF1AB55192291D30012D03D</string>
+				<string>0FF1AB51192291D30012D03D</string>
+				<string>829FB34798234DF39E7DD19B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>0FF1AB4B192291D30012D03D</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>0FF1AB5D192291D30012D03D</string>
+				<string>0FF1AB68192291D30012D03D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>0FF1AB4C192291D30012D03D</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>0FF1AB7F192291D30012D03D</string>
+			<key>buildPhases</key>
+			<array>
+				<string>02279B26D8A24E06A4B0AB43</string>
+				<string>0FF1AB49192291D30012D03D</string>
+				<string>0FF1AB4A192291D30012D03D</string>
+				<string>0FF1AB4B192291D30012D03D</string>
+				<string>60E02E4968D740778337750A</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>TendigiTwitter</string>
+			<key>productName</key>
+			<string>TendigiTwitter</string>
+			<key>productReference</key>
+			<string>0FF1AB4D192291D30012D03D</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>0FF1AB4D192291D30012D03D</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>TendigiTwitter.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>0FF1AB4E192291D30012D03D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>0FF1AB4D192291D30012D03D</string>
+				<string>0FF1AB6D192291D30012D03D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0FF1AB4F192291D30012D03D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>0FF1AB50192291D30012D03D</string>
+				<string>0FF1AB52192291D30012D03D</string>
+				<string>0FF1AB54192291D30012D03D</string>
+				<string>0FF1AB56192291D30012D03D</string>
+				<string>0FF1AB6E192291D30012D03D</string>
+				<string>71F71738C869416B89B6F25C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0FF1AB50192291D30012D03D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>0FF1AB51192291D30012D03D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0FF1AB50192291D30012D03D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0FF1AB52192291D30012D03D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreGraphics.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreGraphics.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>0FF1AB53192291D30012D03D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0FF1AB52192291D30012D03D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0FF1AB54192291D30012D03D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>UIKit.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/UIKit.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>0FF1AB55192291D30012D03D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0FF1AB54192291D30012D03D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0FF1AB56192291D30012D03D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreData.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreData.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>0FF1AB57192291D30012D03D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0FF1AB56192291D30012D03D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0FF1AB58192291D30012D03D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>0FF1AB85192293560012D03D</string>
+				<string>0FF1AB86192293560012D03D</string>
+				<string>0FF1AB61192291D30012D03D</string>
+				<string>0FF1AB62192291D30012D03D</string>
+				<string>0FF1AB67192291D30012D03D</string>
+				<string>0FF1AB64192291D30012D03D</string>
+				<string>0FF1AB59192291D30012D03D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>TendigiTwitter</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0FF1AB59192291D30012D03D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>0FF1AB5A192291D30012D03D</string>
+				<string>0FF1AB5B192291D30012D03D</string>
+				<string>0FF1AB5E192291D30012D03D</string>
+				<string>0FF1AB60192291D30012D03D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0FF1AB5A192291D30012D03D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>TendigiTwitter-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0FF1AB5B192291D30012D03D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>0FF1AB5C192291D30012D03D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0FF1AB5C192291D30012D03D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0FF1AB5D192291D30012D03D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0FF1AB5B192291D30012D03D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0FF1AB5E192291D30012D03D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>main.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0FF1AB5F192291D30012D03D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0FF1AB5E192291D30012D03D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0FF1AB60192291D30012D03D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>TendigiTwitter-Prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0FF1AB61192291D30012D03D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ZAAppDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0FF1AB62192291D30012D03D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ZAAppDelegate.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0FF1AB63192291D30012D03D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0FF1AB62192291D30012D03D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0FF1AB64192291D30012D03D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>0FF1AB65192291D30012D03D</string>
+			</array>
+			<key>currentVersion</key>
+			<string>0FF1AB65192291D30012D03D</string>
+			<key>isa</key>
+			<string>XCVersionGroup</string>
+			<key>path</key>
+			<string>TendigiTwitter.xcdatamodeld</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+			<key>versionGroupType</key>
+			<string>wrapper.xcdatamodel</string>
+		</dict>
+		<key>0FF1AB65192291D30012D03D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.xcdatamodel</string>
+			<key>path</key>
+			<string>TendigiTwitter.xcdatamodel</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0FF1AB66192291D30012D03D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0FF1AB64192291D30012D03D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0FF1AB67192291D30012D03D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Images.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0FF1AB68192291D30012D03D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0FF1AB67192291D30012D03D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0FF1AB69192291D30012D03D</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>0FF1AB7C192291D30012D03D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>0FF1AB6A192291D30012D03D</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>0FF1AB6F192291D30012D03D</string>
+				<string>0FF1AB72192291D30012D03D</string>
+				<string>0FF1AB71192291D30012D03D</string>
+				<string>0FF1AB70192291D30012D03D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>0FF1AB6B192291D30012D03D</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>0FF1AB7A192291D30012D03D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>0FF1AB6C192291D30012D03D</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>0FF1AB82192291D30012D03D</string>
+			<key>buildPhases</key>
+			<array>
+				<string>0FF1AB69192291D30012D03D</string>
+				<string>0FF1AB6A192291D30012D03D</string>
+				<string>0FF1AB6B192291D30012D03D</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>0FF1AB74192291D30012D03D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>TendigiTwitterTests</string>
+			<key>productName</key>
+			<string>TendigiTwitterTests</string>
+			<key>productReference</key>
+			<string>0FF1AB6D192291D30012D03D</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>0FF1AB6D192291D30012D03D</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>TendigiTwitterTests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>0FF1AB6E192291D30012D03D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>XCTest.framework</string>
+			<key>path</key>
+			<string>Library/Frameworks/XCTest.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>0FF1AB6F192291D30012D03D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0FF1AB6E192291D30012D03D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0FF1AB70192291D30012D03D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0FF1AB50192291D30012D03D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0FF1AB71192291D30012D03D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0FF1AB54192291D30012D03D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0FF1AB72192291D30012D03D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0FF1AB56192291D30012D03D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0FF1AB73192291D30012D03D</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>0FF1AB45192291D30012D03D</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>0FF1AB4C192291D30012D03D</string>
+			<key>remoteInfo</key>
+			<string>TendigiTwitter</string>
+		</dict>
+		<key>0FF1AB74192291D30012D03D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>0FF1AB4C192291D30012D03D</string>
+			<key>targetProxy</key>
+			<string>0FF1AB73192291D30012D03D</string>
+		</dict>
+		<key>0FF1AB75192291D30012D03D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>0FF1AB7B192291D30012D03D</string>
+				<string>0FF1AB76192291D30012D03D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>TendigiTwitterTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0FF1AB76192291D30012D03D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>0FF1AB77192291D30012D03D</string>
+				<string>0FF1AB78192291D30012D03D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0FF1AB77192291D30012D03D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>TendigiTwitterTests-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0FF1AB78192291D30012D03D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>0FF1AB79192291D30012D03D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0FF1AB79192291D30012D03D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0FF1AB7A192291D30012D03D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0FF1AB78192291D30012D03D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0FF1AB7B192291D30012D03D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>TendigiTwitterTests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0FF1AB7C192291D30012D03D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0FF1AB7B192291D30012D03D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0FF1AB7D192291D30012D03D</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.1</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>0FF1AB7E192291D30012D03D</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>7.1</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>0FF1AB7F192291D30012D03D</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>0FF1AB80192291D30012D03D</string>
+				<string>0FF1AB81192291D30012D03D</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>0FF1AB80192291D30012D03D</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>0084A2046EB1412EA3D901FD</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
+				<string>LaunchImage</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>TendigiTwitter/TendigiTwitter-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>TendigiTwitter/TendigiTwitter-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>0FF1AB81192291D30012D03D</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>0084A2046EB1412EA3D901FD</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
+				<string>LaunchImage</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>TendigiTwitter/TendigiTwitter-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>TendigiTwitter/TendigiTwitter-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>0FF1AB82192291D30012D03D</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>0FF1AB83192291D30012D03D</string>
+				<string>0FF1AB84192291D30012D03D</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>0FF1AB83192291D30012D03D</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(BUILT_PRODUCTS_DIR)/TendigiTwitter.app/TendigiTwitter</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>TendigiTwitter/TendigiTwitter-Prefix.pch</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>INFOPLIST_FILE</key>
+				<string>TendigiTwitterTests/TendigiTwitterTests-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUNDLE_LOADER)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>xctest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>0FF1AB84192291D30012D03D</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(BUILT_PRODUCTS_DIR)/TendigiTwitter.app/TendigiTwitter</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>TendigiTwitter/TendigiTwitter-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>TendigiTwitterTests/TendigiTwitterTests-Info.plist</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUNDLE_LOADER)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>xctest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>0FF1AB85192293560012D03D</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>ZAPrivateConstants.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0FF1AB86192293560012D03D</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>ZAPrivateConstants.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0FF1AB87192293560012D03D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0FF1AB86192293560012D03D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>60E02E4968D740778337750A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Pods-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>71F71738C869416B89B6F25C</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>829FB34798234DF39E7DD19B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>71F71738C869416B89B6F25C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>0FF1AB45192291D30012D03D</string>
+</dict>
+</plist>
