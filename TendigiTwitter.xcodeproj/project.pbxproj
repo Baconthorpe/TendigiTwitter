@@ -22,6 +22,7 @@
 		0FF1AB72192291D30012D03D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF1AB56192291D30012D03D /* CoreData.framework */; };
 		0FF1AB7A192291D30012D03D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0FF1AB78192291D30012D03D /* InfoPlist.strings */; };
 		0FF1AB7C192291D30012D03D /* TendigiTwitterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF1AB7B192291D30012D03D /* TendigiTwitterTests.m */; };
+		0FF1AB87192293560012D03D /* ZAPrivateConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF1AB86192293560012D03D /* ZAPrivateConstants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		0FF1AB77192291D30012D03D /* TendigiTwitterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TendigiTwitterTests-Info.plist"; sourceTree = "<group>"; };
 		0FF1AB79192291D30012D03D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0FF1AB7B192291D30012D03D /* TendigiTwitterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TendigiTwitterTests.m; sourceTree = "<group>"; };
+		0FF1AB85192293560012D03D /* ZAPrivateConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZAPrivateConstants.h; sourceTree = "<group>"; };
+		0FF1AB86192293560012D03D /* ZAPrivateConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZAPrivateConstants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 		0FF1AB58192291D30012D03D /* TendigiTwitter */ = {
 			isa = PBXGroup;
 			children = (
+				0FF1AB85192293560012D03D /* ZAPrivateConstants.h */,
+				0FF1AB86192293560012D03D /* ZAPrivateConstants.m */,
 				0FF1AB61192291D30012D03D /* ZAAppDelegate.h */,
 				0FF1AB62192291D30012D03D /* ZAAppDelegate.m */,
 				0FF1AB67192291D30012D03D /* Images.xcassets */,
@@ -251,6 +256,7 @@
 			files = (
 				0FF1AB66192291D30012D03D /* TendigiTwitter.xcdatamodeld in Sources */,
 				0FF1AB5F192291D30012D03D /* main.m in Sources */,
+				0FF1AB87192293560012D03D /* ZAPrivateConstants.m in Sources */,
 				0FF1AB63192291D30012D03D /* ZAAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
