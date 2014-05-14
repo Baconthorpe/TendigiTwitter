@@ -7,7 +7,18 @@
 //
 
 #import "ZATwitterAPIClient.h"
+#import "ZAPrivateConstants.h"
+#import "AFNetworking.h"
 
 @implementation ZATwitterAPIClient
+
+- (NSString  *) encodeConsumerKeyAndSecret
+{
+    NSString *unencodedCredentials = [NSString stringWithFormat:@"%@:%@",TWITTER_API_KEY,TWITTER_API_SECRET];
+    
+    NSString *encodedCredentials = [[unencodedCredentials dataUsingEncoding:NSUTF8StringEncoding] base64EncodedStringWithOptions:0];
+    
+    return encodedCredentials;
+}
 
 @end
