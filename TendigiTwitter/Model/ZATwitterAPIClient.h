@@ -10,4 +10,8 @@
 
 @interface ZATwitterAPIClient : NSObject
 
++ (instancetype)sharedClient;
+
+- (void) getBearerToken;
+
 @end

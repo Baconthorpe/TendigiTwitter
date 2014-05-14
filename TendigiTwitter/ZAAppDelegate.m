@@ -7,6 +7,13 @@
 //
 
 #import "ZAAppDelegate.h"
+#import "ZATwitterAPIClient.h"
+
+@interface ZAAppDelegate ()
+
+@property (strong, nonatomic) ZATwitterAPIClient *twitterClient;
+
+@end
 
 @implementation ZAAppDelegate
 
@@ -16,6 +23,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.twitterClient = [ZATwitterAPIClient sharedClient];
+    
+    [self.twitterClient getBearerToken];
+    
     return YES;
 }
 
