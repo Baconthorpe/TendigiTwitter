@@ -9,10 +9,12 @@
 #import "ZATwitterAPIClient.h"
 #import "ZAPrivateConstants.h"
 #import "AFNetworking.h"
+#import "STTwitterAPI.h"
 
 @interface ZATwitterAPIClient ()
 
 @property (strong, nonatomic) AFHTTPSessionManager *manager;
+@property (strong, nonatomic) STTwitterAPI *sttwitter;
 
 @end
 
@@ -27,6 +29,18 @@
     });
     
     return _sharedClient;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        _sttwitter = [STTwitterAPI twitterAPIAppOnlyWithConsumerKey:TWITTER_API_KEY consumerSecret:TWITTER_API_SECRET];
+    }
+    
+    return self;
 }
 
 - (NSString  *) encodeConsumerKeyAndSecret

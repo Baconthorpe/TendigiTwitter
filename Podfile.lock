@@ -18,11 +18,14 @@ PODS:
   - AFNetworking/UIKit (2.2.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - STTwitter (0.1.2)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.2)
+  - STTwitter (~> 0.1)
 
 SPEC CHECKSUMS:
   AFNetworking: 01aa7c3aa9a200b94943e54072a4373f14b3d219
+  STTwitter: b46bef092a1585abd1bdafc8b2b92048a37a14fc
 
 COCOAPODS: 0.32.1

@@ -26,6 +26,7 @@
 		0FF1AB8D1922A1CB0012D03D /* ZATwitterAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF1AB8C1922A1CB0012D03D /* ZATwitterAPIClient.m */; };
 		0FF1AB8F1922A1F80012D03D /* mainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FF1AB8E1922A1F80012D03D /* mainStoryboard.storyboard */; };
 		0FF1AB921922A25E0012D03D /* ZATendigiFeedTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF1AB911922A25E0012D03D /* ZATendigiFeedTVC.m */; };
+		0FF1AB9519241A540012D03D /* ZATweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF1AB9419241A540012D03D /* ZATweetCell.m */; };
 		829FB34798234DF39E7DD19B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F71738C869416B89B6F25C /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,8 @@
 		0FF1AB8E1922A1F80012D03D /* mainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = mainStoryboard.storyboard; sourceTree = "<group>"; };
 		0FF1AB901922A25E0012D03D /* ZATendigiFeedTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZATendigiFeedTVC.h; sourceTree = "<group>"; };
 		0FF1AB911922A25E0012D03D /* ZATendigiFeedTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZATendigiFeedTVC.m; sourceTree = "<group>"; };
+		0FF1AB9319241A540012D03D /* ZATweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZATweetCell.h; path = TendigiTwitter/View/ZATweetCell.h; sourceTree = SOURCE_ROOT; };
+		0FF1AB9419241A540012D03D /* ZATweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZATweetCell.m; path = TendigiTwitter/View/ZATweetCell.m; sourceTree = SOURCE_ROOT; };
 		71F71738C869416B89B6F25C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -188,6 +191,8 @@
 			isa = PBXGroup;
 			children = (
 				0FF1AB8E1922A1F80012D03D /* mainStoryboard.storyboard */,
+				0FF1AB9319241A540012D03D /* ZATweetCell.h */,
+				0FF1AB9419241A540012D03D /* ZATweetCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -334,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FF1AB66192291D30012D03D /* TendigiTwitter.xcdatamodeld in Sources */,
+				0FF1AB9519241A540012D03D /* ZATweetCell.m in Sources */,
 				0FF1AB5F192291D30012D03D /* main.m in Sources */,
 				0FF1AB8D1922A1CB0012D03D /* ZATwitterAPIClient.m in Sources */,
 				0FF1AB921922A25E0012D03D /* ZATendigiFeedTVC.m in Sources */,
