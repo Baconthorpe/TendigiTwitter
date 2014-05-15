@@ -25,7 +25,7 @@
 {
     self.twitterClient = [ZATwitterAPIClient sharedClient];
     
-    [self.twitterClient getBearerToken];
+    [self.twitterClient verify];
     
     return YES;
 }

@@ -9,12 +9,12 @@
 #import "ZATwitterAPIClient.h"
 #import "ZAPrivateConstants.h"
 #import "AFNetworking.h"
-#import "STTwitterAPI.h"
+#import "STTwitterAppOnly.h"
 
 @interface ZATwitterAPIClient ()
 
 @property (strong, nonatomic) AFHTTPSessionManager *manager;
-@property (strong, nonatomic) STTwitterAPI *sttwitter;
+@property (strong, nonatomic) STTwitterAppOnly *sttwitter;
 
 @end
 
@@ -37,10 +37,38 @@
     
     if (self)
     {
-        _sttwitter = [STTwitterAPI twitterAPIAppOnlyWithConsumerKey:TWITTER_API_KEY consumerSecret:TWITTER_API_SECRET];
+        _sttwitter = [STTwitterAppOnly twitterAppOnlyWithConsumerName:@"Tendigi Tweets" consumerKey:TWITTER_API_KEY consumerSecret:TWITTER_API_SECRET];
     }
     
     return self;
+}
+
+- (void) verify
+{
+    [self.sttwitter verifyCredentialsWithSuccessBlock:^(NSString *username) {
+        self.sttwitter.bearerToken = username;
+        NSLog(@"%@",self.sttwitter.bearerToken);
+        [self fetch];
+    } errorBlock:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+}
+
+- (void) fetch
+{
+    [self.sttwitter fetchResource:@"/1.1/statuses/user_timeline.json?screen_name=twitterapi&count=2"
+                       HTTPMethod:@"GET"
+                    baseURLString:@"https://api.twitter.com"
+                       parameters:@{ @"access_token" : self.sttwitter.bearerToken }
+              uploadProgressBlock:^(NSInteger bytesWritten, NSInteger totalBytesWritten, NSInteger totalBytesExpectedToWrite) {
+                  
+              } downloadProgressBlock:^(id request, id response) {
+                  
+              } successBlock:^(id request, NSDictionary *requestHeaders, NSDictionary *responseHeaders, id response) {
+                  NSLog(@"Response: %@",response);
+              } errorBlock:^(id request, NSDictionary *requestHeaders, NSDictionary *responseHeaders, NSError *error) {
+                  NSLog(@"Error: %@",error);
+              }];
 }
 
 - (NSString  *) encodeConsumerKeyAndSecret

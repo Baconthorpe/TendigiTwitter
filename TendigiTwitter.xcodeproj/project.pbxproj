@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F8DABFC1925140600C72512 /* ZATwitterAppOnly.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8DABFB1925140600C72512 /* ZATwitterAppOnly.m */; };
 		0FF1AB51192291D30012D03D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF1AB50192291D30012D03D /* Foundation.framework */; };
 		0FF1AB53192291D30012D03D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF1AB52192291D30012D03D /* CoreGraphics.framework */; };
 		0FF1AB55192291D30012D03D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FF1AB54192291D30012D03D /* UIKit.framework */; };
@@ -42,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		0084A2046EB1412EA3D901FD /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		0F8DABFA1925140600C72512 /* ZATwitterAppOnly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZATwitterAppOnly.h; sourceTree = "<group>"; };
+		0F8DABFB1925140600C72512 /* ZATwitterAppOnly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZATwitterAppOnly.m; sourceTree = "<group>"; };
 		0FF1AB4D192291D30012D03D /* TendigiTwitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TendigiTwitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FF1AB50192291D30012D03D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0FF1AB52192291D30012D03D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -183,6 +186,8 @@
 			children = (
 				0FF1AB8B1922A1CB0012D03D /* ZATwitterAPIClient.h */,
 				0FF1AB8C1922A1CB0012D03D /* ZATwitterAPIClient.m */,
+				0F8DABFA1925140600C72512 /* ZATwitterAppOnly.h */,
+				0F8DABFB1925140600C72512 /* ZATwitterAppOnly.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -344,6 +349,7 @@
 				0FF1AB8D1922A1CB0012D03D /* ZATwitterAPIClient.m in Sources */,
 				0FF1AB921922A25E0012D03D /* ZATendigiFeedTVC.m in Sources */,
 				0FF1AB87192293560012D03D /* ZAPrivateConstants.m in Sources */,
+				0F8DABFC1925140600C72512 /* ZATwitterAppOnly.m in Sources */,
 				0FF1AB63192291D30012D03D /* ZAAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,6 +12,6 @@
 
 + (instancetype)sharedClient;
 
-- (void) getBearerToken;
+- (void) verify;
 
 @end
