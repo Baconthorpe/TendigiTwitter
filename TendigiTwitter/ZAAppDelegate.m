@@ -23,9 +23,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.twitterClient = [ZATwitterAPIClient sharedClient];
-    
-    [self.twitterClient verify];
+//    self.twitterClient = [ZATwitterAPIClient sharedClient];
+//    [self.twitterClient configureMaxTweets:20];
+//    
+//    [self.twitterClient verifyCredentialsWithCompletion:^(NSString *bearer) {
+//        
+//    }];
+//    [self.twitterClient fetchTendigiTweets];
     
     return YES;
 }

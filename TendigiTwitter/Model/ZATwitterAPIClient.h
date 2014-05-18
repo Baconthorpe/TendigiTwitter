@@ -10,8 +10,15 @@
 
 @interface ZATwitterAPIClient : NSObject
 
+// Initialize and Configure
 + (instancetype)sharedClient;
+- (void) configureMaxTweets: (NSInteger)max;
 
-- (void) verify;
+// Verify Credentials
+- (void) verifyCredentialsWithCompletion: (void (^)(NSString *bearer))completionBlock;
+
+// Fetch Tweets
+- (void) fetchTendigiTweetsOfCount: (NSInteger)tweetCount
+                    withCompletion: (void (^)(NSArray *arrayOfTweets))completionBlock;
 
 @end

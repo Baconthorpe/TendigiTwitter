@@ -10,15 +10,21 @@
 #import "ZAPrivateConstants.h"
 #import "AFNetworking.h"
 #import "STTwitterAppOnly.h"
+#import "ZATweet.h"
 
 @interface ZATwitterAPIClient ()
 
 @property (strong, nonatomic) AFHTTPSessionManager *manager;
 @property (strong, nonatomic) STTwitterAppOnly *sttwitter;
 
+@property (strong, nonatomic) NSArray *tweets;
+@property (nonatomic) NSInteger maxTweets;
+
 @end
 
 @implementation ZATwitterAPIClient
+
+#pragma mark - Initialize and Configure
 
 + (instancetype)sharedClient
 {
@@ -38,25 +44,38 @@
     if (self)
     {
         _sttwitter = [STTwitterAppOnly twitterAppOnlyWithConsumerName:@"Tendigi Tweets" consumerKey:TWITTER_API_KEY consumerSecret:TWITTER_API_SECRET];
+        _tweets = [NSArray new];
     }
     
     return self;
 }
 
-- (void) verify
+- (void) configureMaxTweets: (NSInteger)max
+{
+    self.maxTweets = max;
+}
+
+#pragma mark - Verify Credentials
+
+- (void) verifyCredentialsWithCompletion: (void (^)(NSString *bearer))completionBlock;
 {
     [self.sttwitter verifyCredentialsWithSuccessBlock:^(NSString *username) {
         self.sttwitter.bearerToken = username;
         NSLog(@"%@",self.sttwitter.bearerToken);
-        [self fetch];
+        completionBlock(username);
     } errorBlock:^(NSError *error) {
         NSLog(@"%@",error);
     }];
 }
 
-- (void) fetch
+#pragma mark - Fetch Tweets
+
+- (void) fetchTendigiTweetsOfCount: (NSInteger)tweetCount
+                    withCompletion: (void (^)(NSArray *arrayOfTweets))completionBlock
 {
-    [self.sttwitter fetchResource:@"/1.1/statuses/user_timeline.json?screen_name=twitterapi&count=2"
+    NSString *resourceString = [NSString stringWithFormat:@"/1.1/statuses/user_timeline.json?screen_name=TENDIGI&count=%d",tweetCount];
+    
+    [self.sttwitter fetchResource:resourceString
                        HTTPMethod:@"GET"
                     baseURLString:@"https://api.twitter.com"
                        parameters:@{ @"access_token" : self.sttwitter.bearerToken }
@@ -66,6 +85,7 @@
                   
               } successBlock:^(id request, NSDictionary *requestHeaders, NSDictionary *responseHeaders, id response) {
                   NSLog(@"Response: %@",response);
+                  completionBlock(response);
               } errorBlock:^(id request, NSDictionary *requestHeaders, NSDictionary *responseHeaders, NSError *error) {
                   NSLog(@"Error: %@",error);
               }];
@@ -92,6 +112,40 @@
     }
     
     return _manager;
+}
+
+- (NSArray *) parseArrayOfTweets: (NSArray *)arrayOfTweets
+{
+    NSMutableArray *parsedTweets = [NSMutableArray new];
+    
+    for (NSDictionary *dictionaryOfTweet in arrayOfTweets) {
+        [parsedTweets addObject:[self parseDictionaryOfTweet:dictionaryOfTweet]];
+    };
+    
+    return parsedTweets;
+}
+
+- (ZATweet *) parseDictionaryOfTweet: (NSDictionary *)dictionaryOfTweet
+{
+    NSString *authorName = dictionaryOfTweet[@"user"][@"name"];
+    NSURL *authorProfileImageURL = [NSURL URLWithString:dictionaryOfTweet[@"user"][@"profile_image_url"]];
+    
+    NSDateFormatter *createdAtFormatter = [NSDateFormatter new];
+    [createdAtFormatter setDateFormat:@"eee MMM dd HH:mm:ss ZZZZ yyyy"];
+    NSDate *createdAt = [createdAtFormatter dateFromString:dictionaryOfTweet[@"created_at"]];
+    
+    NSString *idStr = dictionaryOfTweet[@"id_str"];
+    NSInteger favoriteCount = [dictionaryOfTweet[@"favorite_count"] integerValue];
+    NSInteger retweetCount = [dictionaryOfTweet[@"retweet_count"] integerValue];
+    NSString *content = dictionaryOfTweet[@"text"];
+    
+    return [ZATweet tweetWithAuthorName:authorName
+                  authorProfileImageURL:authorProfileImageURL
+                              createdAt:createdAt
+                                  idStr:idStr
+                          favoriteCount:favoriteCount
+                           retweetCount:retweetCount
+                                content:content];
 }
 
 - (void) getBearerToken

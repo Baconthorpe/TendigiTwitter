@@ -7,8 +7,14 @@
 //
 
 #import "ZATendigiFeedTVC.h"
+#import "ZAManager.h"
+#import "ZATweet.h"
+#import "ZATweetCell.h"
 
 @interface ZATendigiFeedTVC ()
+
+@property (strong, nonatomic) ZAManager *manager;
+@property (strong, nonatomic) NSArray *tweets;
 
 @end
 
@@ -26,6 +32,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.manager = [ZAManager sharedManager];
+    
+    [self.manager populateTweetsWithCompletion:^(NSArray *tweets) {
+        self.tweets = tweets;
+        [self.tableView reloadData];
+    }];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -50,14 +63,33 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
+    if (self.tweets)
+    {
+        return [self.tweets count];
+    }
+    
     return 0;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 90;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.tweets)
+    {
+        NSLog(@"%d",indexPath.row);
+        NSInteger thisRow = indexPath.row;
+        ZATweet *thisTweet = self.tweets[thisRow];
+        
+        return [ZATweetCell tweetCellWithAuthorImage:nil
+                                              author:thisTweet.authorName
+                                             content:thisTweet.content];
+    }
+    
+    return  nil;
 }
 
 /*

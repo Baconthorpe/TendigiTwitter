@@ -15,4 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *authorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 
++ (instancetype) tweetCellWithAuthorImage: (UIImage *)authorImage
+                                   author: (NSString *)author
+                                  content: (NSString *)content;
+
 @end
