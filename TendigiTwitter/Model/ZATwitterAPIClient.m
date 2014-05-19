@@ -61,16 +61,31 @@
 {
     [self.sttwitter verifyCredentialsWithSuccessBlock:^(NSString *username) {
         self.sttwitter.bearerToken = username;
-        NSLog(@"%@",self.sttwitter.bearerToken);
         completionBlock(username);
     } errorBlock:^(NSError *error) {
         NSLog(@"%@",error);
     }];
 }
 
-#pragma mark - Fetch Tweets
+#pragma mark - Lazy Instantiation of Session Manager
 
-- (void) fetchTendigiTweetsOfCount: (NSInteger)tweetCount
+- (AFHTTPSessionManager *) manager
+{
+    if (!_manager)
+    {
+        _manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"api.twitter.com"]];
+        _manager.requestSerializer=[AFHTTPRequestSerializer serializer];
+        
+        [_manager.requestSerializer setValue:[NSString stringWithFormat: @"Basic %@",[self encodeConsumerKeyAndSecret]] forHTTPHeaderField:@"Authorization"];
+        [_manager.requestSerializer setValue:@"application/x-www-form-urlencoded;charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
+    }
+    
+    return _manager;
+}
+
+#pragma mark - Get Tweets
+
+- (void) getTendigiTweetsOfCount: (NSInteger)tweetCount
                     withCompletion: (void (^)(NSArray *arrayOfTweets))completionBlock
 {
     NSString *resourceString = [NSString stringWithFormat:@"/1.1/statuses/user_timeline.json?screen_name=TENDIGI&count=%d",tweetCount];
@@ -84,7 +99,6 @@
               } downloadProgressBlock:^(id request, id response) {
                   
               } successBlock:^(id request, NSDictionary *requestHeaders, NSDictionary *responseHeaders, id response) {
-                  NSLog(@"Response: %@",response);
                   completionBlock(response);
               } errorBlock:^(id request, NSDictionary *requestHeaders, NSDictionary *responseHeaders, NSError *error) {
                   NSLog(@"Error: %@",error);
@@ -100,19 +114,7 @@
     return encodedCredentials;
 }
 
-- (AFHTTPSessionManager *) manager
-{
-    if (!_manager)
-    {
-        _manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"api.twitter.com"]];
-        _manager.requestSerializer=[AFHTTPRequestSerializer serializer];
-        
-        [_manager.requestSerializer setValue:[NSString stringWithFormat: @"Basic %@",[self encodeConsumerKeyAndSecret]] forHTTPHeaderField:@"Authorization"];
-        [_manager.requestSerializer setValue:@"application/x-www-form-urlencoded;charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
-    }
-    
-    return _manager;
-}
+#pragma mark - Parsing Tweet JSON
 
 - (NSArray *) parseArrayOfTweets: (NSArray *)arrayOfTweets
 {
@@ -147,56 +149,5 @@
                            retweetCount:retweetCount
                                 content:content];
 }
-
-- (void) getBearerToken
-{
-    NSURL *url = [NSURL URLWithString:@"api.twitter.com/oauth2/token"];
-    
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    [request addValue:[NSString stringWithFormat:@"Basic %@",[self encodeConsumerKeyAndSecret]] forHTTPHeaderField:@"Authorization"];
-    [request addValue:@"application/x-www-form-urlencoded;charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
-    
-    AFHTTPRequestOperation *newOp = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    
-    NSString *bodyString = @"grant_type=client_credentials";
-    request.HTTPBody = [bodyString dataUsingEncoding:NSUTF8StringEncoding];
-    request.HTTPMethod = @"POST";
-    
-    [newOp setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog (@"Response: %@",responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog (@"Error: %@",error);
-    }];
-    
-    [newOp start];
-}
-
-//- (void) flagPostID:(NSString *)postObjectID
-//     withCompletion:(void (^)(NSDictionary *))completion
-//{
-//    NSString *parsePostURL = [NSString stringWithFormat:@"https://api.parse.com/1/classes/GRTPost/%@", postObjectID];
-//    NSURL *url = [NSURL URLWithString:parsePostURL];
-//    
-//    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-//    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-//    [request addValue:self.restAPIKey forHTTPHeaderField:@"X-Parse-REST-API-Key"];
-//    [request addValue:self.appID forHTTPHeaderField:@"X-Parse-Application-Id"];
-//    
-//    AFHTTPRequestOperation *newOp = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-//    
-//    NSString *json = @"{\"isFlagged\":true}";
-//    request.HTTPBody = [json dataUsingEncoding:NSUTF8StringEncoding];
-//    request.HTTPMethod = @"PUT";
-//    
-//    [newOp setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        NSLog(@"Parse Flag successful. Update Post Response: %@",responseObject);
-//        completion(responseObject);
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        NSLog(@"Parse Flag unsuccessful. Update Post Error:%@",error);
-//    }];
-//    
-//    [newOp start];
-//    
-//}
 
 @end

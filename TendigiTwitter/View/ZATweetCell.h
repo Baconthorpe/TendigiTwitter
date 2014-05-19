@@ -10,14 +10,13 @@
 
 @interface ZATweetCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIImageView *authorImage;
+// Public Properties
 
+@property (weak, nonatomic) IBOutlet UIImageView *authorImage;
 @property (weak, nonatomic) IBOutlet UILabel *authorLabel;
 @property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 
-+ (instancetype) tweetCellWithAuthorImage: (UIImage *)authorImage
-                                   author: (NSString *)author
-                                  content: (NSString *)content;
+// Instantiation and Configuration
 
 - (instancetype) configureCellWithAuthorImage: (UIImage *)authorImage
                                        author: (NSString *)author

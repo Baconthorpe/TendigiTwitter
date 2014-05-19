@@ -10,6 +10,8 @@
 
 @interface ZATweet : NSObject
 
+// Public Properties
+
 @property (readonly, strong, nonatomic) NSString *authorName;
 @property (readonly, strong, nonatomic) NSURL *authorProfileImageURL;
 
@@ -21,6 +23,7 @@
 
 @property (readonly, strong, nonatomic) NSString *content;
 
+// Instantiation
 
 + (instancetype) tweetWithAuthorName: (NSString *)authorName
                authorProfileImageURL: (NSURL *)authorProfileImageURL

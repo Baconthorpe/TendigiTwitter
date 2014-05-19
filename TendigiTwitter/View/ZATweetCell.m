@@ -11,15 +11,6 @@
 
 @implementation ZATweetCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
 - (void)awakeFromNib
 {
     // Initialization code
@@ -32,17 +23,15 @@
     // Configure the view for the selected state
 }
 
-+ (instancetype) tweetCellWithAuthorImage: (UIImage *)authorImage
-                                   author: (NSString *)author
-                                  content: (NSString *)content
+#pragma mark - Instantiation and Configuration
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
-    ZATweetCell *newCell = [ZATweetCell new];
-    
-    newCell.authorImage.image = authorImage;
-    newCell.authorLabel.text = author;
-    newCell.contentLabel.text = content;
-    
-    return newCell;
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) {
+        // Initialization code
+    }
+    return self;
 }
 
 - (instancetype) configureCellWithAuthorImage: (UIImage *)authorImage

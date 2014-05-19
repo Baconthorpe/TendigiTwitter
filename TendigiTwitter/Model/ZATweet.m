@@ -10,6 +10,8 @@
 
 @implementation ZATweet
 
+#pragma mark - Instantiation
+
 + (instancetype) tweetWithAuthorName: (NSString *)authorName
                authorProfileImageURL: (NSURL *)authorProfileImageURL
                            createdAt: (NSDate *)createdAt

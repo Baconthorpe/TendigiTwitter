@@ -22,6 +22,8 @@
 
 @implementation ZATendigiFeedTVC
 
+#pragma mark - Basic Life-Cycle Methods
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -36,6 +38,7 @@
     [super viewDidLoad];
     
     self.manager = [ZAManager sharedManager];
+    self.manager.maxTweets = 20;
     self.mainQueue = [NSOperationQueue mainQueue];
     self.imageQueue = [NSOperationQueue new];
     
@@ -60,7 +63,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+#pragma mark - Table View Data Source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -87,7 +90,6 @@
 {
     if (self.manager.tweets)
     {
-        NSLog(@"%d",indexPath.row);
         NSInteger thisRow = indexPath.row;
         ZATweet *thisTweet = self.manager.tweets[thisRow];
         
@@ -103,56 +105,6 @@
     
     return  nil;
 }
-
-#pragma mark - Utility Methods
-
-//- (void) updateTableWithTweetData: (NSArray *)tweets
-//{
-//    self.tweets = tweets;
-//    [self.tableView reloadData];
-//}
-
-//- (ZATweetCell *) configureCell: (ZATweetCell *)cell
-//                          tweet: (ZATweet *)tweet
-//                    authorImage: (UIImage *)authorImage
-//{
-//    ZATweetCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"tweetCell" forIndexPath:indexPath];
-//    [cell configureCellWithAuthorImage:authorImage
-//                                author:tweet.authorName
-//                               content:tweet.content];
-//    
-//    return cell;
-//}
-
-//- (void) initiateImageGetsForAllTweets
-//{
-//    for (ZATweet *tweet in self.manager.tweets) {
-//        
-//        [self.manager getImageDataForURL:[tweet.authorProfileImageURL absoluteString] withCompletion:^(NSData *imageData) {
-//            
-//            [self.mainQueue addOperationWithBlock:^{
-//                
-//                UIImage *authorImage = [UIImage imageWithData:imageData];
-//                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.manager.tweets indexOfObject:tweet] inSection:0];
-//                ZATweetCell *cell = (ZATweetCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-//                [cell configureCellWithAuthorImage:authorImage
-//                                            author:tweet.authorName
-//                                           content:tweet.content];
-//            }];
-//        }];
-//    }
-//}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
 
 /*
 // Override to support conditional editing of the table view.

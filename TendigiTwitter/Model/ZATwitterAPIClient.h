@@ -17,8 +17,8 @@
 // Verify Credentials
 - (void) verifyCredentialsWithCompletion: (void (^)(NSString *bearer))completionBlock;
 
-// Fetch Tweets
-- (void) fetchTendigiTweetsOfCount: (NSInteger)tweetCount
+// Get Tweets
+- (void) getTendigiTweetsOfCount: (NSInteger)tweetCount
                     withCompletion: (void (^)(NSArray *arrayOfTweets))completionBlock;
 
 @end
