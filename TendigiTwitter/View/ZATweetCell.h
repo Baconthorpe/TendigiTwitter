@@ -19,4 +19,8 @@
                                    author: (NSString *)author
                                   content: (NSString *)content;
 
+- (instancetype) configureCellWithAuthorImage: (UIImage *)authorImage
+                                       author: (NSString *)author
+                                      content: (NSString *)content;
+
 @end

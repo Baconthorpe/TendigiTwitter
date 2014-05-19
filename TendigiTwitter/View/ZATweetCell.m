@@ -44,5 +44,16 @@
     return newCell;
 }
 
+- (instancetype) configureCellWithAuthorImage: (UIImage *)authorImage
+                                       author: (NSString *)author
+                                      content: (NSString *)content
+{
+    self.authorImage.image = authorImage;
+    self.authorLabel.text = author;
+    self.contentLabel.text = content;
+    
+    return self;
+}
+
 
 @end

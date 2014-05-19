@@ -15,6 +15,7 @@
 
 @property (strong, nonatomic) ZAManager *manager;
 @property (strong, nonatomic) NSArray *tweets;
+@property (strong, nonatomic) NSOperationQueue *mainQueue;
 
 @end
 
@@ -34,10 +35,13 @@
     [super viewDidLoad];
     
     self.manager = [ZAManager sharedManager];
+    self.mainQueue = [NSOperationQueue mainQueue];
     
     [self.manager populateTweetsWithCompletion:^(NSArray *tweets) {
-        self.tweets = tweets;
-        [self.tableView reloadData];
+        [self.mainQueue addOperationWithBlock:^{
+            self.tweets = tweets;
+            [self.tableView reloadData];
+        }];
     }];
     
     // Uncomment the following line to preserve selection between presentations.
@@ -84,12 +88,23 @@
         NSInteger thisRow = indexPath.row;
         ZATweet *thisTweet = self.tweets[thisRow];
         
-        return [ZATweetCell tweetCellWithAuthorImage:nil
-                                              author:thisTweet.authorName
-                                             content:thisTweet.content];
+        ZATweetCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"tweetCell" forIndexPath:indexPath];
+        [cell configureCellWithAuthorImage:nil
+                                    author:thisTweet.authorName
+                                   content:thisTweet.content];
+        
+        return cell;
     }
     
     return  nil;
+}
+
+#pragma mark - Utility Methods
+
+- (void) updateTableWithTweetData: (NSArray *)tweets
+{
+    self.tweets = tweets;
+    [self.tableView reloadData];
 }
 
 /*
