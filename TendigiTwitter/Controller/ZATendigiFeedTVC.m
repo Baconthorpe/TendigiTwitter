@@ -16,6 +16,7 @@
 @property (strong, nonatomic) ZAManager *manager;
 @property (strong, nonatomic) NSArray *tweets;
 @property (strong, nonatomic) NSOperationQueue *mainQueue;
+@property (strong, nonatomic) NSOperationQueue *imageQueue;
 
 @end
 
@@ -36,11 +37,13 @@
     
     self.manager = [ZAManager sharedManager];
     self.mainQueue = [NSOperationQueue mainQueue];
+    self.imageQueue = [NSOperationQueue new];
     
     [self.manager populateTweetsWithCompletion:^(NSArray *tweets) {
         [self.mainQueue addOperationWithBlock:^{
-            self.tweets = tweets;
+            self.manager.tweets = tweets;
             [self.tableView reloadData];
+//            [self initiateImageGetsForAllTweets];
         }];
     }];
     
@@ -67,9 +70,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (self.tweets)
+    if (self.manager.tweets)
     {
-        return [self.tweets count];
+        return [self.manager.tweets count];
     }
     
     return 0;
@@ -82,16 +85,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (self.tweets)
+    if (self.manager.tweets)
     {
         NSLog(@"%d",indexPath.row);
         NSInteger thisRow = indexPath.row;
-        ZATweet *thisTweet = self.tweets[thisRow];
+        ZATweet *thisTweet = self.manager.tweets[thisRow];
         
         ZATweetCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"tweetCell" forIndexPath:indexPath];
         [cell configureCellWithAuthorImage:nil
                                     author:thisTweet.authorName
                                    content:thisTweet.content];
+        
+        [self.manager setAuthorImageForTweetCell:cell withURL:thisTweet.authorProfileImageURL];
         
         return cell;
     }
@@ -101,11 +106,42 @@
 
 #pragma mark - Utility Methods
 
-- (void) updateTableWithTweetData: (NSArray *)tweets
-{
-    self.tweets = tweets;
-    [self.tableView reloadData];
-}
+//- (void) updateTableWithTweetData: (NSArray *)tweets
+//{
+//    self.tweets = tweets;
+//    [self.tableView reloadData];
+//}
+
+//- (ZATweetCell *) configureCell: (ZATweetCell *)cell
+//                          tweet: (ZATweet *)tweet
+//                    authorImage: (UIImage *)authorImage
+//{
+//    ZATweetCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"tweetCell" forIndexPath:indexPath];
+//    [cell configureCellWithAuthorImage:authorImage
+//                                author:tweet.authorName
+//                               content:tweet.content];
+//    
+//    return cell;
+//}
+
+//- (void) initiateImageGetsForAllTweets
+//{
+//    for (ZATweet *tweet in self.manager.tweets) {
+//        
+//        [self.manager getImageDataForURL:[tweet.authorProfileImageURL absoluteString] withCompletion:^(NSData *imageData) {
+//            
+//            [self.mainQueue addOperationWithBlock:^{
+//                
+//                UIImage *authorImage = [UIImage imageWithData:imageData];
+//                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:[self.manager.tweets indexOfObject:tweet] inSection:0];
+//                ZATweetCell *cell = (ZATweetCell *)[self.tableView cellForRowAtIndexPath:indexPath];
+//                [cell configureCellWithAuthorImage:authorImage
+//                                            author:tweet.authorName
+//                                           content:tweet.content];
+//            }];
+//        }];
+//    }
+//}
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

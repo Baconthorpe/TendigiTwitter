@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BNd-Oh-5mX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="kpF-mW-7Ef">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Tendigi FeedTVC-->
+        <!--Tendigi FeedTVC - TENDIGI TWEETS-->
         <scene sceneID="ul6-Dz-hUi">
             <objects>
                 <tableViewController id="BNd-Oh-5mX" customClass="ZATendigiFeedTVC" sceneMemberID="viewController">
@@ -14,7 +14,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tweetCell" id="JgC-Ri-1ZG" customClass="ZATweetCell">
-                                <rect key="frame" x="0.0" y="22" width="320" height="90"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JgC-Ri-1ZG" id="CXY-33-lhc">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
@@ -27,7 +27,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Content" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="216" translatesAutoresizingMaskIntoConstraints="NO" id="J9g-qo-A1t">
-                                            <rect key="frame" x="84" y="41" width="216" height="38"/>
+                                            <rect key="frame" x="84" y="32" width="216" height="52"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="highlightedColor"/>
@@ -50,8 +50,27 @@
                             <outlet property="delegate" destination="BNd-Oh-5mX" id="FcX-p2-q75"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="TENDIGI TWEETS" id="Alt-no-UJ3"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qpL-Se-sQB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1065" y="122"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Jqe-Bb-enf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kpF-mW-7Ef" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Ut-9N-FxU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BNd-Oh-5mX" kind="relationship" relationship="rootViewController" id="sf6-bT-aBX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P7q-fi-D76" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="539" y="122"/>
         </scene>

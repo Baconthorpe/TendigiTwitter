@@ -8,8 +8,8 @@
 
 #import "ZATwitterAPIClient.h"
 #import "ZAPrivateConstants.h"
-#import "AFNetworking.h"
-#import "STTwitterAppOnly.h"
+#import <AFNetworking.h>
+#import <STTwitterAppOnly.h>
 #import "ZATweet.h"
 
 @interface ZATwitterAPIClient ()

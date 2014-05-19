@@ -7,6 +7,7 @@
 //
 
 #import "ZATweetCell.h"
+#import <AFNetworking/UIKit+AFNetworking.h>
 
 @implementation ZATweetCell
 

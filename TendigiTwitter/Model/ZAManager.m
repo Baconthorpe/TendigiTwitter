@@ -7,11 +7,15 @@
 //
 
 #import "ZAManager.h"
+#import <AFNetworking.h>
+#import <AFNetworking/UIKit+AFNetworking.h>
 #import "ZATwitterAPIClient.h"
 #import "ZATweet.h"
+#import "ZATweetCell.h"
 
 @interface ZAManager ()
 
+@property (strong, nonatomic) AFHTTPSessionManager *manager;
 @property (strong, nonatomic) ZATwitterAPIClient *twitterClient;
 @property (nonatomic) NSInteger maxTweets;
 
@@ -38,6 +42,7 @@
     
     if (self)
     {
+        _manager = [AFHTTPSessionManager manager];
         _twitterClient = [ZATwitterAPIClient sharedClient];
     }
     
@@ -48,6 +53,16 @@
 {
     self.maxTweets = max;
 }
+
+//- (NSArray *) tweets
+//{
+//    return self.tweets;
+//}
+//
+//- (void) setTweets:(NSArray *)tweets
+//{
+//    self.tweets = tweets;
+//}
 
 #pragma mark - Key Functionality
 
@@ -60,6 +75,29 @@
                                            completionBlock(parsedTweets);
                                        }];
     }];
+}
+
+//- (void) getImageDataForURL: (NSString *)urlString
+//             withCompletion: (void (^)(NSData *imageData))completionBlock
+//{
+//    NSLog(@"Bleh.");
+//    
+//    []
+//    
+//    [self.manager GET:urlString
+//           parameters:nil
+//              success:^(NSURLSessionDataTask *task, id responseObject) {
+//                  NSLog(@"Response: %@",responseObject);
+//              }
+//              failure:^(NSURLSessionDataTask *task, NSError *error) {
+//                  NSLog(@"Error: %@",error);
+//              }];
+//}
+
+- (void) setAuthorImageForTweetCell: (ZATweetCell *)tweetCell
+                            withURL: (NSURL *)url
+{
+    [tweetCell.authorImage setImageWithURL:url];
 }
 
 #pragma mark - Parse Tweet Data
